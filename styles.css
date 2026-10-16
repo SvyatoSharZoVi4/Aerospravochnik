@@ -46,3 +46,25 @@ html[data-theme="dark"] .dialog-close{background:#17232b;color:#edf2f3}
 @media(max-width:760px){.site-header{height:auto;min-height:82px;flex-wrap:wrap;gap:10px;padding-top:12px;padding-bottom:12px}.site-header nav{margin-left:auto}.site-header>.theme-switcher{order:3;margin:0 0 0 auto}}
 @media(max-width:560px){.site-header{min-height:70px}.site-header nav{gap:13px}.site-header>.theme-switcher{margin-top:0}.theme-switcher button{padding:7px 8px;font-size:10px}}
 @media(prefers-reduced-motion:reduce){.theme-switcher button{transition:none}}
+
+
+/* ===== Исправления тёмной темы: контраст и состояния ===== */
+html[data-theme="dark"] .card-type{background:#17232bd9;color:#edf2f3}
+html[data-theme="dark"] .card-number{color:#9fb0b7}
+html[data-theme="dark"] .card-meta,html[data-theme="dark"] .card-arrow,html[data-theme="dark"] .text-button,html[data-theme="dark"] .dialog-category{color:#9DADA3}
+html[data-theme="dark"] .card-footer{border-top-color:#3b4b54}
+html[data-theme="dark"] .card-footer strong{color:#edf2f3}
+html[data-theme="dark"] .note-banner strong{color:#edf2f3}
+html[data-theme="dark"] .note-banner p{color:#b1bec4}
+html[data-theme="dark"] .note-icon{background:#2d4650;color:#9DADA3}
+html[data-theme="dark"] .category-chip span{color:#9fb0b7}
+html[data-theme="dark"] .category-chip.active span{color:#26353d}
+html[data-theme="dark"] .category-chip:hover:not(.active){border-color:#9DADA3;color:#fff}
+html[data-theme="dark"] .search-box,html[data-theme="dark"] .search-box>span{color:#9fb0b7}
+html[data-theme="dark"] .search-box kbd{border-color:#3b4b54}
+html[data-theme="dark"] .dialog-intro,html[data-theme="dark"] .dialog-section p{color:#b1bec4}
+html[data-theme="dark"] .dialog-section{border-top-color:#3b4b54}
+html[data-theme="dark"] .spec-table td{border-bottom-color:#33434c}
+html[data-theme="dark"] .spec-table td:first-child{color:#9fb0b7}
+html[data-theme="dark"] .source-note{background:#17232b;color:#b1bec4}
+html[data-theme="dark"] .primary-button:hover,html[data-theme="light"] .primary-button:hover{background:#b3c1b9}

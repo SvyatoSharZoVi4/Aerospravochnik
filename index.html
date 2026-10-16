@@ -6,6 +6,17 @@
   <meta name="description" content="Независимая справочная энциклопедия современных беспилотных летательных аппаратов: типы, назначение и характеристики.">
   <meta name="theme-color" content="#FFFFFF">
   <title>АэроСправочник — энциклопедия БПЛА</title>
+  <meta name="color-scheme" content="light dark">
+  <script>
+    /* Ранняя установка темы — до отрисовки, чтобы не было вспышки светлой темы */
+    (function () {
+      try {
+        var m = localStorage.getItem("aerospravochnik-theme");
+        var dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.setAttribute("data-theme", (m === "dark" || (m !== "light" && dark)) ? "dark" : "light");
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>

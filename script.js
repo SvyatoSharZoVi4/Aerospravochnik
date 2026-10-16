@@ -79,29 +79,31 @@ renderArticles();
 
 /* Управление темой: авто, светлая, тёмная */
 (() => {
+  const STORAGE_KEY = "aerospravochnik-theme";
+  const MODES = ["auto", "light", "dark"];
+  const META_COLORS = { light: "#FFFFFF", dark: "#202f38" }; // совпадает с фоном шапки
   const root = document.documentElement;
   const buttons = document.querySelectorAll("[data-theme-mode]");
   const themeColor = document.querySelector('meta[name="theme-color"]');
-  const storageKey = "aerospravochnik-theme";
-  const validModes = ["auto", "light", "dark"];
-  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
-  let mode = "auto";
+  const systemTheme = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
 
-  try {
-    const savedMode = localStorage.getItem(storageKey);
-    if (validModes.includes(savedMode)) mode = savedMode;
-  } catch {
-    // Если хранилище недоступно, используем режим «Авто».
+  function readMode() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      return MODES.includes(saved) ? saved : "auto";
+    } catch {
+      return "auto"; // хранилище недоступно (приватный режим и т. п.)
+    }
   }
 
+  let mode = readMode();
+
   function applyTheme() {
-    const effectiveTheme = mode === "auto"
-      ? (systemTheme.matches ? "dark" : "light")
+    const effective = mode === "auto"
+      ? (systemTheme && systemTheme.matches ? "dark" : "light")
       : mode;
-    root.dataset.theme = effectiveTheme;
-    if (themeColor) {
-      themeColor.setAttribute("content", effectiveTheme === "dark" ? "#17232b" : "#FFFFFF");
-    }
+    root.setAttribute("data-theme", effective);
+    if (themeColor) themeColor.setAttribute("content", META_COLORS[effective]);
     buttons.forEach(button => {
       button.setAttribute("aria-pressed", String(button.dataset.themeMode === mode));
     });
@@ -109,20 +111,33 @@ renderArticles();
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
-      const nextMode = button.dataset.themeMode;
-      if (!validModes.includes(nextMode)) return;
-      mode = nextMode;
+      const next = button.dataset.themeMode;
+      if (!MODES.includes(next)) return;
+      mode = next;
       try {
-        localStorage.setItem(storageKey, mode);
+        if (mode === "auto") localStorage.removeItem(STORAGE_KEY);
+        else localStorage.setItem(STORAGE_KEY, mode);
       } catch {
-        // Переключение продолжает работать до перезагрузки страницы.
+        // Переключение работает до перезагрузки страницы.
       }
       applyTheme();
     });
   });
 
-  systemTheme.addEventListener("change", () => {
-    if (mode === "auto") applyTheme();
+  // Смена системной темы — реагируем только в режиме «Авто»
+  if (systemTheme) {
+    const onSystemChange = () => { if (mode === "auto") applyTheme(); };
+    if (systemTheme.addEventListener) systemTheme.addEventListener("change", onSystemChange);
+    else if (systemTheme.addListener) systemTheme.addListener(onSystemChange); // старые Safari
+  }
+
+  // Синхронизация между вкладками
+  window.addEventListener("storage", e => {
+    if (e.key === STORAGE_KEY || e.key === null) {
+      mode = readMode();
+      applyTheme();
+    }
   });
+
   applyTheme();
 })();
