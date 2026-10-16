@@ -34,7 +34,7 @@ function renderArticles() {
       <div class="card-body"><div class="card-meta"><span>●</span>${a.categoryName}</div><h3>${a.title}</h3><p>${a.summary}</p><div class="card-footer"><strong>Читать обзор</strong><span class="card-arrow">↗</span></div></div>
     </article>`).join("");
   emptyState.hidden = filtered.length !== 0;
-  resultsLabel.textContent = `${filtered.length} ${pluralize(filtered.length, "материал", "материала", "материалов")}`;
+  resultsLabel.textContent = `${String(filtered.length).padStart(2, "0")} ${pluralize(filtered.length, "МАТЕРИАЛ", "МАТЕРИАЛА", "МАТЕРИАЛОВ")}`;
   grid.querySelectorAll(".article-card").forEach(card => {
     const open = () => showArticle(card.dataset.id);
     card.addEventListener("click", open);

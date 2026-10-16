@@ -3,80 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Независимая справочная энциклопедия современных беспилотных летательных аппаратов: типы, назначение и характеристики.">
-  <title>АэроСправочник — энциклопедия БПЛА</title>
+  <meta name="theme-color" content="#071923">
+  <meta name="description" content="АэроСправочник — понятная энциклопедия беспилотной авиации: типы аппаратов, назначение, принципы работы и справочные характеристики.">
+  <title>АэроСправочник — энциклопедия беспилотной авиации</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
   <header class="site-header">
-    <a class="brand" href="#" aria-label="АэроСправочник — главная">
-      <span class="brand-mark">А</span>
-      <span><strong>АэроСправочник</strong><small>ЭНЦИКЛОПЕДИЯ БПЛА</small></span>
+    <a class="brand" href="#top" aria-label="АэроСправочник — главная">
+      <span class="brand-mark" aria-hidden="true">А<span>·</span></span>
+      <span class="brand-copy"><strong>АэроСправочник</strong><small>ЭНЦИКЛОПЕДИЯ БЕСПИЛОТНОЙ АВИАЦИИ</small></span>
     </a>
-    <nav aria-label="Основная навигация">
+    <nav class="main-nav" aria-label="Основная навигация">
       <a href="#catalog">Каталог</a>
       <a href="#categories">Категории</a>
       <a href="#about">О проекте</a>
     </nav>
+    <a class="header-index" href="#catalog"><span class="status-dot"></span> ОТКРЫТЫЙ СПРАВОЧНИК</a>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="dot"></span> СПРАВОЧНИК БЕСПИЛОТНОЙ АВИАЦИИ</div>
-        <h1>Мир беспилотников.<br><em>В одном месте.</em></h1>
-        <p class="hero-lead">Понятные материалы о современных БПЛА: как устроены аппараты, для чего применяются и чем отличаются их основные характеристики.</p>
-        <a class="primary-button" href="#catalog">Изучить каталог <span aria-hidden="true">↘</span></a>
-        <div class="hero-stats">
-          <div><strong id="article-count">6</strong><span>справочных статей</span></div>
-          <div><strong>4</strong><span>категории аппаратов</span></div>
-          <div><strong>01</strong><span>открытая энциклопедия</span></div>
+        <div class="eyebrow"><span class="status-dot"></span> UAV KNOWLEDGE BASE <span class="eyebrow-divider">/</span> 2026</div>
+        <h1>Технологии<br>полёта — <em>понятно.</em></h1>
+        <p class="hero-lead">Независимый справочник беспилотной авиации. Разбираемся в типах аппаратов, принципах работы и задачах, для которых они созданы.</p>
+        <div class="hero-actions">
+          <a class="primary-button" href="#catalog">Открыть каталог <span aria-hidden="true">↗</span></a>
+          <a class="secondary-link" href="#about">О проекте <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-stats" aria-label="О справочнике">
+          <div><strong id="article-count">06</strong><span>обзорных материалов</span></div>
+          <div><strong>04</strong><span>направления авиации</span></div>
+          <div><strong>01</strong><span>открытая база знаний</span></div>
         </div>
       </div>
-      <div class="hero-visual" aria-label="Иллюстрация беспилотного летательного аппарата">
-        <div class="visual-grid"></div>
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <div class="visual-label label-top">UAV / FIELD GUIDE <span>• 2026</span></div>
+
+      <div class="hero-visual" aria-label="Техническая схема беспилотника самолётного типа">
+        <div class="visual-topline"><span>AS / FIELD NOTES</span><span>PLATE 001—A</span></div>
+        <div class="blueprint-grid"></div>
+        <div class="blueprint-rings ring-one"></div><div class="blueprint-rings ring-two"></div>
         <svg class="drone-art" viewBox="0 0 520 340" role="img" aria-label="Схематичное изображение беспилотника с неподвижным крылом">
           <defs>
-            <linearGradient id="wing" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#dce8ed"/><stop offset="1" stop-color="#7895a4"/></linearGradient>
-            <linearGradient id="body" x1="0" x2="1"><stop stop-color="#f5f8f8"/><stop offset="1" stop-color="#9bb2bd"/></linearGradient>
+            <linearGradient id="wing" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#d9e8e9"/><stop offset="1" stop-color="#7695a1"/></linearGradient>
+            <linearGradient id="body" x1="0" x2="1"><stop stop-color="#f0f7f5"/><stop offset="1" stop-color="#91adb5"/></linearGradient>
           </defs>
-          <ellipse cx="258" cy="278" rx="180" ry="20" fill="#071b29" opacity=".3"/>
+          <ellipse cx="258" cy="278" rx="180" ry="20" fill="#020b11" opacity=".38"/>
           <g transform="translate(260 166) rotate(-17)">
-            <path d="M-218 7 L-55 -18 L-24 -15 L-18 2 L-205 28 Z" fill="#5e7d8d" opacity=".8"/>
-            <path d="M-198 -1 L-36 -30 L-19 -23 L-25 -8 L-205 16 Z" fill="url(#wing)" stroke="#e6f0f2" stroke-width="1.2"/>
-            <path d="M-16 -19 L-58 -77 L-41 -85 L5 -25 Z" fill="#8da7b3"/>
-            <path d="M-42 -77 L-15 -105 L-2 -101 L-18 -69 Z" fill="#c3d3d9"/>
-            <path d="M-18 -20 L122 -37 L199 -21 L201 -5 L116 7 L-10 7 Z" fill="url(#wing)" stroke="#e7f0f2" stroke-width="1.5"/>
-            <path d="M105 -28 L176 -67 L193 -61 L157 -20 Z" fill="#91aab5"/>
-            <path d="M115 -23 L184 8 L199 1 L157 -28 Z" fill="#c6d6dc"/>
-            <path d="M-36 -12 Q-9 -23 27 -19 L78 -8 L82 4 L32 11 Q-8 16 -34 4 Z" fill="url(#body)" stroke="#f4f8f8" stroke-width="1.5"/>
-            <path d="M-32 -8 L-74 -1 L-79 7 L-29 5 Z" fill="#819da9"/>
-            <path d="M-4 -15 L14 -16 L30 -11 L19 -4 L-2 -5 Z" fill="#314e5d"/>
-            <path d="M-25 5 L-42 22 L-34 24 L-10 8 Z" fill="#7694a2"/>
-            <circle cx="10" cy="-9" r="3.5" fill="#53d8bd"/>
+            <path d="M-218 7 L-55 -18 L-24 -15 L-18 2 L-205 28 Z" fill="#426572" opacity=".8"/>
+            <path d="M-198 -1 L-36 -30 L-19 -23 L-25 -8 L-205 16 Z" fill="url(#wing)" stroke="#e6f0f0" stroke-width="1.2"/>
+            <path d="M-16 -19 L-58 -77 L-41 -85 L5 -25 Z" fill="#7897a2"/>
+            <path d="M-42 -77 L-15 -105 L-2 -101 L-18 -69 Z" fill="#b6cdd1"/>
+            <path d="M-18 -20 L122 -37 L199 -21 L201 -5 L116 7 L-10 7 Z" fill="url(#wing)" stroke="#e7f0f0" stroke-width="1.5"/>
+            <path d="M105 -28 L176 -67 L193 -61 L157 -20 Z" fill="#88a6af"/>
+            <path d="M115 -23 L184 8 L199 1 L157 -28 Z" fill="#c1d5d8"/>
+            <path d="M-36 -12 Q-9 -23 27 -19 L78 -8 L82 4 L32 11 Q-8 16 -34 4 Z" fill="url(#body)" stroke="#f4f8f7" stroke-width="1.5"/>
+            <path d="M-32 -8 L-74 -1 L-79 7 L-29 5 Z" fill="#7796a1"/>
+            <path d="M-4 -15 L14 -16 L30 -11 L19 -4 L-2 -5 Z" fill="#244452"/>
+            <path d="M-25 5 L-42 22 L-34 24 L-10 8 Z" fill="#6e8d99"/>
+            <circle cx="10" cy="-9" r="3.5" fill="#42d9bf"/>
           </g>
-          <g fill="none" stroke="#54d8bd" stroke-width="1.3" opacity=".9">
-            <path d="M84 100 H146 L177 129"/><circle cx="177" cy="129" r="3" fill="#54d8bd"/>
-            <path d="M340 87 H394 L415 107"/><circle cx="415" cy="107" r="3" fill="#54d8bd"/>
+          <g fill="none" stroke="#42d9bf" stroke-width="1.3" opacity=".95">
+            <path d="M72 100 H146 L177 129"/><circle cx="177" cy="129" r="3" fill="#42d9bf"/>
+            <path d="M340 87 H394 L415 107"/><circle cx="415" cy="107" r="3" fill="#42d9bf"/>
+            <path d="M355 235 H414 L433 216"/><circle cx="355" cy="235" r="3" fill="#42d9bf"/>
           </g>
-          <g fill="#d8e8ec" font-family="monospace" font-size="10" letter-spacing="1.5">
-            <text x="24" y="92">FIXED-WING</text><text x="350" y="77">AIRFRAME</text>
+          <g fill="#d5e7e8" font-family="monospace" font-size="10" letter-spacing="1.5">
+            <text x="16" y="92">FIXED-WING</text><text x="350" y="77">AIRFRAME</text><text x="370" y="252">SENSOR BAY</text>
           </g>
+          <g stroke="#6b9aa5" stroke-width=".7" opacity=".7"><path d="M260 18 V52 M260 280 V315 M30 166 H63 M457 166 H490"/></g>
         </svg>
-        <div class="visual-coordinates">50° 27' N&nbsp;&nbsp; 30° 31' E</div>
-        <div class="visual-label label-bottom">REFERENCE SERIES <span>AS / 001</span></div>
+        <div class="visual-caption"><span><i></i> AIRFRAME STUDY</span><span>SCHEMATIC / NOT TO SCALE</span></div>
+        <div class="visual-coordinates">50° 27' N&nbsp;&nbsp; 30° 31' E <span>FIG. 01</span></div>
       </div>
+      <div class="hero-bottomline"><span>АЭРОСИСТЕМЫ / СПРАВОЧНАЯ СЕРИЯ</span><span>ИССЛЕДОВАТЬ <b>↓</b></span></div>
     </section>
 
     <section class="search-section" aria-label="Поиск по каталогу">
-      <div><span class="section-kicker">БАЗА ЗНАНИЙ</span><h2>Что вас интересует?</h2></div>
-      <label class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Например, квадрокоптер, мониторинг..." autocomplete="off"><kbd>ПОИСК</kbd></label>
+      <div class="search-intro"><span class="section-kicker">01 / БАЗА ЗНАНИЙ</span><h2>Что вас интересует?</h2><p>Найдите тип аппарата или задачу.</p></div>
+      <label class="search-box"><span class="search-symbol" aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Например, квадрокоптер, мониторинг…" autocomplete="off" aria-label="Поиск по материалам"><kbd>ПОИСК ↵</kbd></label>
     </section>
 
-    <section id="categories" class="categories-section">
-      <div class="section-heading"><div><span class="section-kicker">НАВИГАЦИЯ</span><h2>Категории</h2></div><p>Выберите направление, чтобы отфильтровать справочные материалы.</p></div>
+    <section id="categories" class="categories-section section-shell">
+      <div class="section-heading"><div><span class="section-kicker">02 / НАВИГАЦИЯ</span><h2>Категории</h2></div><p>Выберите направление, чтобы отфильтровать справочные материалы.</p></div>
       <div class="category-list" role="group" aria-label="Фильтр по категориям">
         <button class="category-chip active" data-category="all">Все материалы <span>06</span></button>
         <button class="category-chip" data-category="civil">Гражданские <span>02</span></button>
@@ -86,25 +96,30 @@
       </div>
     </section>
 
-    <section id="catalog" class="catalog-section">
-      <div class="section-heading catalog-heading"><div><span class="section-kicker">ИЗУЧИТЬ</span><h2>Материалы энциклопедии</h2></div><span id="results-label" class="results-label">6 материалов</span></div>
+    <section id="catalog" class="catalog-section section-shell">
+      <div class="section-heading catalog-heading"><div><span class="section-kicker">03 / БИБЛИОТЕКА</span><h2>Материалы энциклопедии</h2></div><span id="results-label" class="results-label">06 МАТЕРИАЛОВ</span></div>
       <div id="article-grid" class="article-grid"></div>
-      <div id="empty-state" class="empty-state" hidden><strong>Ничего не найдено</strong><p>Попробуйте изменить запрос или выбрать другую категорию.</p><button id="reset-search" class="text-button">Сбросить фильтры ↗</button></div>
+      <div id="empty-state" class="empty-state" hidden><strong>Материалы не найдены</strong><p>Попробуйте изменить запрос или выбрать другую категорию.</p><button id="reset-search" class="text-button">Сбросить фильтры ↗</button></div>
     </section>
 
-    <section class="note-banner">
-      <div class="note-icon">i</div><div><strong>Как читать характеристики</strong><p>Параметры зависят от модификации, полезной нагрузки и условий эксплуатации. В статьях следует указывать источник и дату проверки данных; ориентировочные значения не заменяют документацию производителя.</p></div>
+    <section class="note-banner section-shell">
+      <div class="note-icon" aria-hidden="true">i</div><div><span class="section-kicker">РЕДАКЦИОННАЯ ЗАМЕТКА</span><strong>Характеристики требуют контекста.</strong><p>Параметры зависят от модификации, полезной нагрузки и условий эксплуатации. Для точных значений указывайте источник и дату проверки; обзорные материалы не заменяют документацию производителя.</p></div>
+      <span class="note-index">AS / INFO</span>
     </section>
 
-    <section id="about" class="about-section">
-      <div><span class="section-kicker">О ПРОЕКТЕ</span><h2>Знания о технологиях<br>должны быть понятными.</h2></div>
-      <div class="about-copy"><p>«АэроСправочник» — независимый учебный проект о беспилотной авиации. Его задача — собирать и объяснять общедоступную информацию о типах аппаратов, их гражданских и научных применениях, истории и принципах работы.</p><p class="muted">Это стартовая демонстрационная версия. Перед публичным запуском дополните статьи проверенными источниками, уточните характеристики конкретных модификаций и добавьте сведения об авторстве изображений.</p></div>
+    <section id="about" class="about-section section-shell">
+      <div class="about-heading"><span class="section-kicker">04 / О ПРОЕКТЕ</span><h2>Знания о технологиях<br><em>должны быть понятными.</em></h2><div class="about-stamp">INDEPENDENT<br>REFERENCE PROJECT</div></div>
+      <div class="about-copy"><p>«АэроСправочник» — независимый учебный проект о беспилотной авиации. Его задача — собирать и объяснять общедоступную информацию о типах аппаратов, их гражданских и научных применениях, истории и общих принципах работы.</p><p class="muted">Это развивающаяся справочная база. Перед публикацией конкретных технических данных проверяйте первоисточники, указывайте дату проверки и соблюдайте права на изображения.</p><a class="text-link" href="#catalog">Вернуться к материалам <span aria-hidden="true">↗</span></a></div>
     </section>
   </main>
 
-  <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-mark">А</span><span><strong>АэроСправочник</strong><small>ЭНЦИКЛОПЕДИЯ БПЛА</small></span></a><span>Справочный проект · Версия 0.1</span><a href="#top" id="to-top">Наверх ↑</a></footer>
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">А<span>·</span></span><span class="brand-copy"><strong>АэроСправочник</strong><small>ЭНЦИКЛОПЕДИЯ БЕСПИЛОТНОЙ АВИАЦИИ</small></span></a>
+    <span class="footer-note">СПРАВОЧНЫЙ ПРОЕКТ <i></i> ВЕРСИЯ 0.2</span>
+    <a class="to-top" href="#top" id="to-top">НАВЕРХ ↑</a>
+  </footer>
 
-  <dialog id="article-dialog" class="article-dialog"><button class="dialog-close" id="dialog-close" aria-label="Закрыть">×</button><div id="dialog-content"></div></dialog>
+  <dialog id="article-dialog" class="article-dialog"><button class="dialog-close" id="dialog-close" aria-label="Закрыть статью">×</button><div id="dialog-content"></div></dialog>
   <script src="script.js"></script>
 </body>
 </html>
