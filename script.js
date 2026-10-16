@@ -34,7 +34,7 @@ function renderArticles() {
       <div class="card-body"><div class="card-meta"><span>●</span>${a.categoryName}</div><h3>${a.title}</h3><p>${a.summary}</p><div class="card-footer"><strong>Читать обзор</strong><span class="card-arrow">↗</span></div></div>
     </article>`).join("");
   emptyState.hidden = filtered.length !== 0;
-  resultsLabel.textContent = `${String(filtered.length).padStart(2, "0")} ${pluralize(filtered.length, "МАТЕРИАЛ", "МАТЕРИАЛА", "МАТЕРИАЛОВ")}`;
+  resultsLabel.textContent = `${filtered.length} ${pluralize(filtered.length, "материал", "материала", "материалов")}`;
   grid.querySelectorAll(".article-card").forEach(card => {
     const open = () => showArticle(card.dataset.id);
     card.addEventListener("click", open);
@@ -75,3 +75,54 @@ document.getElementById("dialog-close").addEventListener("click", () => dialog.c
 dialog.addEventListener("click", e => { if(e.target === dialog) dialog.close(); });
 document.getElementById("to-top").addEventListener("click", e => { e.preventDefault(); window.scrollTo({top:0,behavior:"smooth"}); });
 renderArticles();
+
+
+/* Управление темой: авто, светлая, тёмная */
+(() => {
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll("[data-theme-mode]");
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const storageKey = "aerospravochnik-theme";
+  const validModes = ["auto", "light", "dark"];
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+  let mode = "auto";
+
+  try {
+    const savedMode = localStorage.getItem(storageKey);
+    if (validModes.includes(savedMode)) mode = savedMode;
+  } catch {
+    // Если хранилище недоступно, используем режим «Авто».
+  }
+
+  function applyTheme() {
+    const effectiveTheme = mode === "auto"
+      ? (systemTheme.matches ? "dark" : "light")
+      : mode;
+    root.dataset.theme = effectiveTheme;
+    if (themeColor) {
+      themeColor.setAttribute("content", effectiveTheme === "dark" ? "#17232b" : "#FFFFFF");
+    }
+    buttons.forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.themeMode === mode));
+    });
+  }
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const nextMode = button.dataset.themeMode;
+      if (!validModes.includes(nextMode)) return;
+      mode = nextMode;
+      try {
+        localStorage.setItem(storageKey, mode);
+      } catch {
+        // Переключение продолжает работать до перезагрузки страницы.
+      }
+      applyTheme();
+    });
+  });
+
+  systemTheme.addEventListener("change", () => {
+    if (mode === "auto") applyTheme();
+  });
+  applyTheme();
+})();
