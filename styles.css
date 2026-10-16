@@ -205,3 +205,26 @@ footer,.site-footer{background:#e9edf0;color:#5b6972;border-top:1px solid #d5dce
 input,textarea,select{color:#172630}
 @media(max-width:700px){.site-header{background:#eef1f3}.hero{background:linear-gradient(145deg,#f5f7f8,#e7ebef)}.hero-visual{border-radius:16px}.article-card{border-radius:15px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+/* Typography refinement: editorial aviation hierarchy */
+:root{--heading-font:"Roboto Condensed","Arial Narrow","Bahnschrift",Impact,sans-serif;--body-font:Inter,"Segoe UI",Roboto,Arial,sans-serif}
+body{font-family:var(--body-font);letter-spacing:.005em}
+.brand-copy strong{font-family:var(--heading-font);font-size:19px;font-weight:800;letter-spacing:.055em;text-transform:uppercase}
+.brand-copy small{font-size:9px;letter-spacing:.16em;text-transform:uppercase;font-weight:650}
+.main-nav{font-size:11px;font-weight:700;letter-spacing:.055em}
+.eyebrow,.section-kicker{font-family:var(--heading-font);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+.hero h1{font-family:var(--heading-font);font-weight:850;font-stretch:condensed;text-transform:uppercase;letter-spacing:-.035em;line-height:.91}
+.hero h1 em,.about-heading h2 em{font-style:normal;font-weight:500;letter-spacing:-.045em}
+.hero-lead{font-size:15px;line-height:1.8;letter-spacing:.005em}
+.search-intro h2,.section-heading h2{font-family:var(--heading-font);font-weight:800;text-transform:uppercase;letter-spacing:-.025em;line-height:1.05}
+.section-heading h2{font-size:clamp(28px,3vw,38px)}
+.card-number,.card-type,.card-meta,.results-label,.hero-stats span,.visual-topline,.visual-coordinates{font-family:var(--heading-font);font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+.card-body h3{font-family:var(--heading-font);font-size:clamp(19px,1.7vw,23px);font-weight:800;letter-spacing:-.018em;line-height:1.12;text-transform:uppercase}
+.card-body p{font-size:13px;line-height:1.7}
+.card-footer{font-family:var(--heading-font);font-size:11px;font-weight:750;letter-spacing:.055em;text-transform:uppercase}
+.about-heading h2{font-family:var(--heading-font);font-weight:800;text-transform:uppercase;letter-spacing:-.025em;line-height:1.02}
+.about-copy p{line-height:1.85}
+.article-dialog h2{font-family:var(--heading-font);font-weight:850;text-transform:uppercase;letter-spacing:-.025em;line-height:1.02}
+.dialog-section h3{font-family:var(--heading-font);font-weight:800;text-transform:uppercase;letter-spacing:.09em}
+.spec-table{font-variant-numeric:tabular-nums}
+@media(max-width:700px){.brand-copy strong{font-size:16px}.hero h1{font-size:clamp(42px,11.8vw,62px);letter-spacing:-.04em;line-height:.94}.eyebrow,.section-kicker{font-size:9px;letter-spacing:.14em}.search-intro h2,.section-heading h2{line-height:1.08}.card-body h3{font-size:16px;line-height:1.12;letter-spacing:-.01em}.about-heading h2{font-size:32px}.article-dialog h2{font-size:30px}}
