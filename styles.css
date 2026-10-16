@@ -228,3 +228,12 @@ body{font-family:var(--body-font);letter-spacing:.005em}
 .dialog-section h3{font-family:var(--heading-font);font-weight:800;text-transform:uppercase;letter-spacing:.09em}
 .spec-table{font-variant-numeric:tabular-nums}
 @media(max-width:700px){.brand-copy strong{font-size:16px}.hero h1{font-size:clamp(42px,11.8vw,62px);letter-spacing:-.04em;line-height:.94}.eyebrow,.section-kicker{font-size:9px;letter-spacing:.14em}.search-intro h2,.section-heading h2{line-height:1.08}.card-body h3{font-size:16px;line-height:1.12;letter-spacing:-.01em}.about-heading h2{font-size:32px}.article-dialog h2{font-size:30px}}
+
+/* Aero Soft Aviation — high-contrast light palette */
+:root{color-scheme:light;--bg:#FFFFFF;--panel:#F4F6F7;--panel-raised:#E8EDF0;--ink:#000000;--muted:#000000;--subtle:#5B6972;--line:rgba(91,105,114,.20);--line-strong:rgba(91,105,114,.38);--teal:#9DADA3;--teal-dark:#5B6972}
+body{background:var(--bg);color:#000000}
+h1,h2,h3,h4,h5,h6,p,.hero-lead,.section-heading>p,.search-intro p,.card-body p,.about-copy p,.about-copy .muted,.brand-copy small,.main-nav,.header-index,.hero-stats span,.card-meta,.card-footer,.results-label,.category-chip,.empty-state,.note-banner p{color:#000000!important}
+.article-card,.search-box,.category-chip,.note-banner,.about-stamp{background:#FFFFFF;border-color:#CFD8DF}
+.category-chip.active{background:#CFD8DF;color:#000000;border-color:#5B6972}
+.category-chip.active span,.card-type,.eyebrow,.section-kicker,.hero h1 em,.about-heading h2 em{color:#5B6972}
+.primary-button{background:#5B6972;color:#FFFFFF;border-color:#5B6972}
